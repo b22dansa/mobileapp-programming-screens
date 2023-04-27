@@ -24,7 +24,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openSecondActivity() {
+
+        //Bundle object is created
+        Bundle extras = new Bundle();
+
+        //Values to bundle
+        extras.putString("WORKER_NAME","Daniel");
+        extras.putInt("WORKER_AGE", 22);
+        extras.putBoolean("WORKER_WORKING", true);
+
+        //Intent is created and initialized
         Intent intent = new Intent(this, SecondActivity.class);
+
+        //Bundle is attached to the Intent object
+        intent.putExtras(extras);
+
+        //Starting the activity
         startActivity(intent);
+
+
+
     }
 }
